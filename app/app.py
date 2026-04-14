@@ -8,8 +8,10 @@ def home():
 
 @app.route('/login')
 def login():
+    AWS_SECRET_ACCESS_KEY = "ABC123SUPERSECRETKEY"
     username = request.args.get('username')
     return f"Welcome {username}"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
