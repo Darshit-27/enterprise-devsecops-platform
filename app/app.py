@@ -8,7 +8,7 @@ def home():
 
 @app.route('/login')
 def login():
-    AWS_SECRET_ACCESS_KEY = "ABC123SUPERSECRETKEY"
+    AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMLEP"
     username = request.args.get('username')
     return f"Welcome {username}"
 
