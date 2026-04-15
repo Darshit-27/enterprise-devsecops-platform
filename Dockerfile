@@ -4,7 +4,12 @@ WORKDIR /app
 
 COPY app/ /app
 
-RUN pip install -r requirements.txt
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir flask
 
 EXPOSE 5000
 
