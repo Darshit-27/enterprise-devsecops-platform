@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Create non-root user
 RUN useradd -m appuser
@@ -8,7 +8,7 @@ WORKDIR /app
 # Copy only required files
 COPY app/ /app
 
-# Install dependencies safely
+# Install dependencies (pinned)
 RUN pip install --no-cache-dir flask==2.2.5
 
 # Switch to non-root user
